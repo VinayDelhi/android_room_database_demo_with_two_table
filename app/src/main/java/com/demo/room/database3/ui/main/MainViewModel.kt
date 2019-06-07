@@ -11,6 +11,7 @@ import com.mindorks.bootcamp.demo.utils.NetworkHelper
 import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
+import java.util.*
 import javax.inject.Inject
 
 @ActivityScope
@@ -61,12 +62,12 @@ class MainViewModel @Inject constructor(
 
                                 databaseService.getUserDao()
                                     .insertMany(
-                                        User(name = "Vinay", companyName = "Umbrella",addressId = addressIdList[0]),
-                                        User(name = "Satya", companyName = "Nagarro",addressId = addressIdList[1]),
-                                        User(name = "Rohit", companyName = "Tdsys",addressId = addressIdList[2]),
-                                        User(name = "Ajaz", companyName = "Amdocs",addressId = addressIdList[3]),
-                                        User(name = "Sunil", companyName = "Amazon",addressId = addressIdList[4]),
-                                        User(name = "Shiv", companyName = "Google",addressId = addressIdList[5])
+                                        User(name = "Vinay", companyName = "Umbrella", dateOfBirth = Date(5467789878),addressId = addressIdList[0]),
+                                        User(name = "Satya", companyName = "Nagarro",dateOfBirth = Date(5467789878), addressId = addressIdList[1]),
+                                        User(name = "Rohit", companyName = "Tdsys",dateOfBirth = Date(5467789878),addressId = addressIdList[2]),
+                                        User(name = "Ajaz", companyName = "Amdocs",dateOfBirth = Date(5467789878),addressId = addressIdList[3]),
+                                        User(name = "Sunil", companyName = "Amazon",dateOfBirth = Date(5467789878),addressId = addressIdList[4]),
+                                        User(name = "Shiv", companyName = "Google",dateOfBirth = Date(5467789878),addressId = addressIdList[5])
 
 
                                     )

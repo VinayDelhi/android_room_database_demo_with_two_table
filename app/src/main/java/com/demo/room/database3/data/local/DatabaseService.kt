@@ -1,7 +1,7 @@
 package com.demo.room.database3.data.local
 
 import android.content.Context
-import androidx.room.Database
+import androidx.room.*
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.demo.room.database3.data.local.dao.AddressDao
@@ -21,6 +21,8 @@ import javax.inject.Singleton
                     version = 1
 
                      )
+
+@TypeConverters(Converter::class)
 abstract class DatabaseService: RoomDatabase()
 {
     abstract fun getUserDao(): UserDao

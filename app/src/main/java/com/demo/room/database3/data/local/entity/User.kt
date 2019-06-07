@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
+import java.util.*
 
 @Entity(tableName = "users",
         foreignKeys = [
@@ -23,6 +24,9 @@ data class User(
         @ColumnInfo(name = "name")
         var name: String,
 
+        @ColumnInfo(name = "dateOfBirth")
+        var dateOfBirth: Date,
+
         @ColumnInfo(name = "company_name")
         var companyName: String,
 
@@ -32,5 +36,5 @@ data class User(
        )
 {
 
-    constructor(): this(0,"","",0)
+    constructor(): this(0,"",Date(),"",0)
 }

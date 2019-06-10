@@ -5,6 +5,8 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.demo.room.database3.MyApplication
 import com.demo.room.database3.data.local.DatabaseService
+import com.demo.room.database3.data.local.migration_1_2
+import com.demo.room.database3.data.local.migration_2_3
 import com.demo.room.database3.di.ApplicationContext
 import com.demo.room.database3.di.DatabaseInfo
 import com.demo.room.database3.di.NetworkInfo
@@ -50,6 +52,7 @@ class ApplicationModule(private val application: MyApplication) {
                     DatabaseService::class.java,
                     "bootcamp-database-project-db"
               )
+        .addMigrations(migration_1_2, migration_2_3)
         .build()
 
     @Provides

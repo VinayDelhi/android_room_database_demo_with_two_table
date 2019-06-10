@@ -50,24 +50,24 @@ class MainViewModel @Inject constructor(
                         databaseService.getAddressDao()
                             .insertMany(
 
-                                Address(city = "Noida", country = "India", code = 1),
-                                Address(city = "Kaliforniya", country = "USA", code = 2),
-                                Address(city = "Landon", country = "UK", code = 3),
-                                Address(city = "Sydney", country = "Australy", code = 4),
-                                Address(city = "Tokiyo", country = "Japan", code = 5),
-                                Address(city = "Hancong", country = "China", code = 6)
+                                Address(city = "Noida", country = "India", code = 1, street = 1),
+                                Address(city = "Kaliforniya", country = "USA", code = 2,street = 2),
+                                Address(city = "Landon", country = "UK", code = 3,street = 3),
+                                Address(city = "Sydney", country = "Australy", code = 4,street = 4),
+                                Address(city = "Tokiyo", country = "Japan", code = 5,street = 5),
+                                Address(city = "Hancong", country = "China", code = 6,street = 6)
 
                             )
                             .flatMap {addressIdList ->
 
                                 databaseService.getUserDao()
                                     .insertMany(
-                                        User(name = "Vinay", companyName = "Umbrella", dateOfBirth = Date(5467789878),addressId = addressIdList[0]),
-                                        User(name = "Satya", companyName = "Nagarro",dateOfBirth = Date(5467789878), addressId = addressIdList[1]),
-                                        User(name = "Rohit", companyName = "Tdsys",dateOfBirth = Date(5467789878),addressId = addressIdList[2]),
-                                        User(name = "Ajaz", companyName = "Amdocs",dateOfBirth = Date(5467789878),addressId = addressIdList[3]),
-                                        User(name = "Sunil", companyName = "Amazon",dateOfBirth = Date(5467789878),addressId = addressIdList[4]),
-                                        User(name = "Shiv", companyName = "Google",dateOfBirth = Date(5467789878),addressId = addressIdList[5])
+                                        User(name = "Vinay", companyName = "Umbrella", dateOfBirth = Date(5467789878),designation = "Engineer", addressId = addressIdList[0]),
+                                        User(name = "Satya", companyName = "Nagarro",dateOfBirth = Date(5467789878), designation = "Sr.Engineer", addressId = addressIdList[1]),
+                                        User(name = "Rohit", companyName = "Tdsys",dateOfBirth = Date(5467789878),designation = "Developer", addressId = addressIdList[2]),
+                                        User(name = "Ajaz", companyName = "Amdocs",dateOfBirth = Date(5467789878),designation = "Sr.Developer", addressId = addressIdList[3]),
+                                        User(name = "Sunil", companyName = "Amazon",dateOfBirth = Date(5467789878),designation = "Programmer", addressId = addressIdList[4]),
+                                        User(name = "Shiv", companyName = "Google",dateOfBirth = Date(5467789878),designation = "Sr.Programmer", addressId = addressIdList[5])
 
 
                                     )
@@ -101,6 +101,8 @@ class MainViewModel @Inject constructor(
                    .subscribe(
 
                        {
+
+                           Log.d(TAG,"User List ${it.toString()}")
                            userList = it
 
                            users.postValue(it)
@@ -123,6 +125,8 @@ class MainViewModel @Inject constructor(
                 .subscribe(
 
                     {
+
+                        Log.d(TAG,"Addressist ${it.toString()}")
                         addressList = it
 
                         address.postValue(it)

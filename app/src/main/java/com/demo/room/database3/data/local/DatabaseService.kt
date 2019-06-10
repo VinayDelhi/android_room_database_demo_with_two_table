@@ -18,7 +18,7 @@ import javax.inject.Singleton
                       Address::class
                      ],
                     exportSchema = false,
-                    version = 1
+                    version = 3
 
                      )
 

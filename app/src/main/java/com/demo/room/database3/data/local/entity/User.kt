@@ -30,11 +30,14 @@ data class User(
         @ColumnInfo(name = "company_name")
         var companyName: String,
 
+        @ColumnInfo(name = "designation")
+        var designation: String,
+
         @ColumnInfo(name = "address_id")
         var addressId: Long
 
        )
 {
 
-    constructor(): this(0,"",Date(),"",0)
+    constructor(): this(0,"",Date(),"","",0)
 }

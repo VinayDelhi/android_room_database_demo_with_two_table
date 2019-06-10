@@ -17,9 +17,12 @@ data class Address(
            var country: String,
 
            @ColumnInfo(name = "code")
-           var code: Int
+           var code: Int,
+
+           @ColumnInfo(name = "street")
+           var street:Int
 
                   )
 {
-    constructor(): this(0,"","",0)
+    constructor(): this(0,"","",0,street=0)
 }

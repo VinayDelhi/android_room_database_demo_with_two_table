@@ -23,19 +23,6 @@ class ApplicationModule(private val application: MyApplication) {
     @ApplicationContext
     fun provideContext(): Context = application
 
-    @Provides
-    @DatabaseInfo
-    fun provideDatabaseName(): String{
-
-        return "abc"
-    }
-
-    @Provides
-    @DatabaseInfo
-    fun provideDatabaseVersion(): Int{
-
-        return 1
-    }
 
     @Provides
     @NetworkInfo

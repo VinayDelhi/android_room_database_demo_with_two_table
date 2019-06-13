@@ -85,6 +85,7 @@ class MainActivity : AppCompatActivity() {
           .build()
           .inject(this)
 
+
         Log.d("DEBUG", "Working")
     }
 }
